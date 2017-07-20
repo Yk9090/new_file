@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="box">
+    <h2>快速搜索消费贷款</h2>
+    <p class="clearflix"><span style="float:left;">贷款金额</span><span style="float:right;">不足一万可用小数表示</span></p>
+    <p><input type="text" id="input-one" value="" style="width: 200px;height: 30px;margin-top:100px;"/><input type="button" value="▼" id="button-one"style="height:30px;"/></p>
+    <div class="divone">
+      <ul id="ul-one">
+        <li class="li-one">5万元</li>
+        <li class="li-one">15万元</li>
+        <li class="li-one">20万元</li>
+        <li class="li-one">25万元</li>
+        <li class="li-one">30万元</li>
+      </ul>
+    </div>
+    <p><span>贷款期限</span></p>
+    <p><input type="text" id="input-two" value=""  style="width: 200px;height: 30px;margin-top:100px;"/><input type="button" value="▼" id="button-two" style="height:30px;"/></p>
+    <div class="divtwo">
+      <ul id="ul-two">
+        <li class="li-two">6个月</li>
+        <li class="li-two">15个月</li>
+        <li class="li-two">20年</li>
+        <li class="li-two">25年</li>
+        <li class="li-two">30年</li>
+      </ul>
+    </div>
+
+    <button class="and">搜索一下</button>
+  </div>
+  <script>
+		var inputone = document.getElementById("input-one");
+		var inputtwo = document.getElementById("input-two");
+		var ulone = document.getElementById("ul-one");
+		var ultwo = document.getElementById("ul-two");
+		var lione = document.getElementsByClassName("li-one");
+		var litwo = document.getElementsByClassName("li-two");
+		var btno = document.getElementById("button-one");
+		var btnt = document.getElementById("button-two");
+		var s = 0;
+		btno.onclick=function(){
+			s++;
+			if(s%2!=0){
+				ulone.style.display = "block"
+			}else{
+				ulone.style.display = "none"
+			}
+		}
+		btnt.onclick=function(){
+			s++;
+			if(s%2!=0){
+				ultwo.style.display = "block"
+			}else{
+				ultwo.style.display = "none"
+			}
+		}
+		for (var i = 0;i<lione.length;i++) {
+			lione[i].onclick=function(){
+				inputone.value = this.innerHTML;
+				ulone.style.display="none";
+				s=0;
+			}
+		}
+		for (var i = 0;i<litwo.length;i++) {
+			litwo[i].onclick=function(){
+				inputtwo.value = this.innerHTML;
+				ultwo.style.display="none";
+				s=0;
+			}
+		}
+</script>
+</body>
+</html>
